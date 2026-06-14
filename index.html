@@ -275,6 +275,16 @@ input[type=range]{width:100%;accent-color:var(--wine);height:6px}
 .me .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
 .chip{font-size:13px;font-weight:600;padding:8px 14px;border-radius:999px;background:var(--paper-2);border:1px solid var(--line)}
 .chip.g{background:rgba(86,106,53,.12);border-color:rgba(86,106,53,.25);color:var(--olive)}
+.ava-circle{border-radius:50%!important;background:var(--paper-2)!important;overflow:hidden}
+.ava-circle img{width:100%;height:100%;object-fit:cover;display:block}
+.me-full{display:grid;grid-template-columns:300px 1fr;gap:36px;align-items:stretch;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:clamp(26px,3vw,44px)}
+.me-full .photo{border-radius:18px;overflow:hidden;min-height:380px}
+.me-full .photo img{width:100%;height:100%;object-fit:cover;display:block}
+.me-full h3{font-size:clamp(22px,2.6vw,30px);margin-bottom:14px}
+.me-full p{font-size:16px;color:var(--ink-soft);max-width:62ch}
+.me-full .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.var-label{text-align:center;font-weight:700;color:var(--wine);font-size:14px;letter-spacing:.02em}
+@media(max-width:760px){.me-full{grid-template-columns:1fr}.me-full .photo{min-height:320px}}
 
 /* trust */
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center}
@@ -661,8 +671,23 @@ footer h5{font-family:'Bitter';color:var(--paper);font-size:15px;margin-bottom:1
 <!-- ============ ОБО МНЕ ============ -->
 <section class="s-pad">
   <div class="wrap">
+    <p class="var-label reveal" style="margin-bottom:14px">Вариант А — фото в кружке</p>
     <div class="me reveal">
-      <div class="ava">Н</div>
+      <div class="ava ava-circle"><img src="img/me-portret.jpg" alt="Наталия"></div>
+      <div>
+        <span class="eyebrow">Кто за этим стоит</span>
+        <h3>Наталия — делаю сама, работаю с вами напрямую</h3>
+        <p>Без менеджеров и потери смысла в пересказе. Разбираюсь в вашем процессе и говорю на понятном языке — без технического жаргона. Сначала на аудите разберёмся, где теряются деньги, а потом решим, что и как автоматизировать.</p>
+        <div class="chips">
+          <span class="chip g">Работаю по договору</span>
+          <span class="chip g">Самозанятая</span>
+          <span class="chip">Данные остаются у вас, в РФ</span>
+        </div>
+      </div>
+    </div>
+    <p class="var-label reveal" style="margin:44px 0 14px">Вариант Б — фото целиком</p>
+    <div class="me-full reveal">
+      <div class="photo"><img src="img/me-flowers.jpg" alt="Наталия"></div>
       <div>
         <span class="eyebrow">Кто за этим стоит</span>
         <h3>Наталия — делаю сама, работаю с вами напрямую</h3>
