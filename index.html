@@ -231,6 +231,24 @@ input[type=range]{width:100%;accent-color:var(--wine);height:6px}
 .mini-bar{height:8px;background:var(--paper-2);border-radius:5px;margin:7px 0 13px;overflow:hidden}
 .mini-bar i{display:block;height:100%;background:var(--olive)}
 .prod-cap{font-size:13px;color:var(--ink-soft);padding:0 16px 16px}
+.scr-tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.scr-tabs span{font-size:11px;font-weight:600;color:var(--ink-soft);padding:4px 9px;border-radius:7px;background:var(--paper-2)}
+.scr-tabs span.on{background:var(--wine);color:#fff}
+.scr-lbl{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin:2px 0 8px}
+.scr-pills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.scr-pills b{font-weight:600;font-size:12px;color:#fff;background:var(--olive);padding:5px 11px;border-radius:999px}
+.scr-toggle{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.scr-toggle span{font-size:11.5px;font-weight:600;color:var(--ink-soft);padding:5px 10px;border-radius:8px;border:1px solid var(--line)}
+.scr-toggle span.on{background:var(--terra);color:#fff;border-color:var(--terra)}
+.rec{padding:10px 0;border-bottom:1px dashed var(--line)}
+.rec:last-child{border:none}
+.rec .nm{font-weight:700;color:var(--ink);font-size:13px}
+.rec .meta{font-size:12px;color:var(--ink-soft);margin-top:2px}
+.rec .amt{font-weight:600;color:var(--wine);font-size:12px;margin-top:3px}
+.scr-grp{font-weight:700;font-size:12.5px;color:var(--ink);margin:12px 0 4px}
+.scr-date{font-size:11.5px;color:var(--ink-soft);margin-bottom:10px}
+.scr-total{margin-top:10px;padding:11px 13px;background:rgba(47,125,82,.09);border:1px solid rgba(47,125,82,.22);border-radius:12px;font-size:12.5px;color:var(--ink);line-height:1.5}
+.scr-total b{color:var(--money)}
 
 /* vs giants */
 .vs{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:22px;overflow:hidden}
@@ -407,7 +425,7 @@ footer h5{font-family:'Bitter';color:var(--paper);font-size:15px;margin-bottom:1
         </div>
       </div>
       <div class="summary">
-        <h4>Сводка хозяина</h4>
+        <h4>Сводка руководителя</h4>
         <div class="sub">сейчас, в реальном времени</div>
         <div class="bar-row"><div class="lab"><span>Участок №4</span><span>78%</span></div><div class="bar"><i style="width:78%"></i></div></div>
         <div class="bar-row"><div class="lab"><span>Участок №7</span><span>52%</span></div><div class="bar"><i style="width:52%"></i></div></div>
@@ -466,7 +484,7 @@ footer h5{font-family:'Bitter';color:var(--paper);font-size:15px;margin-bottom:1
 <section class="s-pad bg-tint" id="vygody">
   <div class="wrap">
     <div class="s-head reveal">
-      <span class="eyebrow">Что это даёт вам как хозяину</span>
+      <span class="eyebrow">Что это даёт вам как владельцу</span>
       <h2>Три выгоды, ради которых всё затевается</h2>
     </div>
     <div class="bento">
@@ -504,12 +522,12 @@ footer h5{font-family:'Bitter';color:var(--paper);font-size:15px;margin-bottom:1
     <div class="steps">
       <div class="step reveal" data-d="0"><h4>Отметка в поле</h4><p>Бригадир отмечает работы с телефона — пара касаний, прямо на участке.</p></div>
       <div class="step reveal" data-d="1"><h4>Сбор данных</h4><p>Всё сразу собирается в одну систему — без тетрадей и пересылок.</p></div>
-      <div class="step reveal" data-d="2"><h4>Сводка хозяину</h4><p>Вы видите картину по участкам, бригадам и людям в реальном времени.</p></div>
-      <div class="step reveal" data-d="3"><h4>Отчёт и оплата</h4><p>В конце периода — готовый отчёт и точная выработка для расчёта зарплаты.</p></div>
+      <div class="step reveal" data-d="2"><h4>Ежедневный отчёт руководителю</h4><p>В конце рабочего дня руководитель открывает готовый отчёт — кто, где и сколько сделал по участкам и бригадам. Не нужно обзванивать и собирать данные по телефону.</p></div>
+      <div class="step reveal" data-d="3"><h4>Отчёт для бухгалтерии</h4><p>Настроим выгрузку под формат вашей бухгалтерии — на этапе внедрения, под ваши документы.</p></div>
     </div>
     <div class="how-note reveal">
       <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      <p><b>А бригадиру удобно?</b> Да. Меньше бумаги и ручного счёта: отметил — и свободен. Работает даже там, где интернет ловит слабо.</p>
+      <p><b>А бригадиру удобно?</b> Да. Меньше бумаги и ручного счёта: отметил в телефоне — и уделяешь время реальной работе. Ставится как приложение — иконка на экране, открыл и работаешь.</p>
     </div>
   </div>
 </section>
@@ -560,36 +578,45 @@ footer h5{font-family:'Bitter';color:var(--paper);font-size:15px;margin-bottom:1
   <div class="wrap">
     <div class="s-head reveal">
       <span class="eyebrow">Так это выглядит</span>
-      <h2>Живой продукт, а не картинки из стока</h2>
+      <h2>Так выглядит работа в продукте</h2>
     </div>
     <div class="prod-grid">
       <div class="screen reveal" data-d="0">
-        <div class="sh"><span class="d"></span>Экран бригадира</div>
+        <div class="sh"><span class="d"></span>Ввод работы</div>
         <div class="sb">
-          <div class="role"><span>Обрезка · уч. 4</span><b>120</b></div>
-          <div class="role"><span>Подвязка · уч. 4</span><b>80</b></div>
-          <div class="role"><span>Полив · сад</span><b>в работе</b></div>
+          <div class="scr-tabs"><span class="on">Ввод данных</span><span>Отчёт</span><span>Журнал</span><span>Сверка</span></div>
+          <div class="scr-lbl">Контекст</div>
+          <div class="scr-pills"><b>Кв.1</b><b>Клетка 1</b><b>Обрезка</b><b>Ручной</b></div>
+          <div class="scr-lbl">Как считать</div>
+          <div class="scr-toggle"><span class="on">Ряды + кусты</span><span>Только ряды</span><span>Часы</span><span>Гектары</span></div>
+          <div class="scr-lbl">Сегодня на работе</div>
+          <div class="scr-toggle"><span class="on">Иванов</span><span>Петров</span></div>
         </div>
-        <p class="prod-cap">Отмечает виды и объёмы работ в пару касаний.</p>
+        <p class="prod-cap">Бригадир выбирает участок, вид работы и единицы — и отмечает. Единицы настраиваются под культуру.</p>
       </div>
       <div class="screen reveal" data-d="1">
-        <div class="sh"><span class="d"></span>Сводка хозяина</div>
+        <div class="sh"><span class="d"></span>Записи за день</div>
         <div class="sb">
-          <div>Участок №4<div class="mini-bar"><i style="width:78%"></i></div></div>
-          <div>Молодой сад<div class="mini-bar"><i style="width:91%"></i></div></div>
-          <div>Участок №7<div class="mini-bar"><i style="width:52%"></i></div></div>
+          <div class="rec"><div class="nm">Иванов</div><div class="meta">Обрезка · 🍇 Виноград · Кв.1 кл.1</div><div class="amt">2 ряда · 280 кустов</div></div>
+          <div class="rec"><div class="nm">Петров</div><div class="meta">Прополка · 🍓 Клубника · Кв.4 кл.4</div><div class="amt">3 ряда · 425 кустов</div></div>
+          <div class="rec"><div class="nm">Сидоров</div><div class="meta">Опрыскивание · 🍓 Клубника · Кв.3 кл.1-5</div><div class="amt">10.28 га</div></div>
+          <div class="scr-total">Всего за день: <b>руками — 5 рядов, 705 кустов</b> · <b>техникой — 10.28 га</b></div>
         </div>
-        <p class="prod-cap">Прогресс по участкам — в реальном времени.</p>
+        <p class="prod-cap">Все работы за день — кто, где и сколько сделал. Итоги считаются сами.</p>
       </div>
       <div class="screen reveal" data-d="2">
-        <div class="sh"><span class="d"></span>Роли и отчёт</div>
+        <div class="sh"><span class="d"></span>Отчёт за период</div>
         <div class="sb">
-          <div class="role"><span>Админ</span><b>загрузка</b></div>
-          <div class="role"><span>Главный бригадир</span><b>контроль</b></div>
-          <div class="role"><span>Бригадир</span><b>отметки</b></div>
-          <div class="role"><span>Отчёт за период</span><b>в 1 клик</b></div>
+          <div class="scr-date">14.06.2026 — 14.06.2026</div>
+          <div class="scr-grp">🔧 Ручные работы</div>
+          <div class="rec"><div class="meta">Обрезка · 🍇 Виноград — Иванов</div><div class="amt">2 ряда · 280 кустов · Кв.1 кл.1</div></div>
+          <div class="rec"><div class="meta">Прополка · 🍓 Клубника — Петров</div><div class="amt">3 ряда · 425 кустов · Кв.4 кл.4</div></div>
+          <div class="scr-total">Итого руками: <b>5 рядов, 705 кустов</b></div>
+          <div class="scr-grp">🚜 Механизированные</div>
+          <div class="rec"><div class="meta">Опрыскивание · 🍓 Клубника — Сидоров</div><div class="amt">ряды 1-6 · 10.28 га · Кв.3 кл.1-5</div></div>
+          <div class="scr-total">Итого техникой: <b>10.28 га</b></div>
         </div>
-        <p class="prod-cap">Каждому — своя роль. Отчёт собирается сам.</p>
+        <p class="prod-cap">Готовый отчёт за период — отдельно руками, отдельно техникой, с итогами.</p>
       </div>
     </div>
   </div>
@@ -616,7 +643,7 @@ footer h5{font-family:'Bitter';color:var(--paper);font-size:15px;margin-bottom:1
         <h3>Учёт работ бригад в агро</h3>
         <ul>
           <li><span class="mk">✓</span>Одна задача — честный учёт работ людей</li>
-          <li><span class="mk">✓</span>Просто: смартфон бригадира + сводка хозяину</li>
+          <li><span class="mk">✓</span>Просто: телефон бригадира + сводка руководителю</li>
           <li><span class="mk">✓</span>Быстрый запуск, без нового железа</li>
           <li><span class="mk">✓</span>Сделано тем, кто был в поле и знает, как там на самом деле</li>
         </ul>
