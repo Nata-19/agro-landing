@@ -95,7 +95,7 @@ header.scrolled .nav{padding:11px 0}
   mask-image:linear-gradient(180deg,#000,transparent 70%);
 }
 .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
-.hero h1{font-size:clamp(34px,5vw,60px);font-weight:800}
+.hero h1{font-size:clamp(34px,5vw,60px);font-weight:800;letter-spacing:0;line-height:1.18;word-spacing:.24em}
 .hero h1 .ac{color:var(--wine);position:relative;white-space:nowrap}
 .hero h1 .ac::after{content:"";position:absolute;left:0;right:0;bottom:.06em;height:.14em;background:var(--gold);opacity:.45;z-index:-1;border-radius:3px}
 .hero p.lead{margin:24px 0 32px}
@@ -103,6 +103,8 @@ header.scrolled .nav{padding:11px 0}
 .trust-badge{display:inline-flex;align-items:center;gap:10px;margin-top:26px;font-size:14px;color:var(--ink-soft)}
 .trust-badge b{color:var(--ink);font-weight:600}
 .dot{width:6px;height:6px;border-radius:50%;background:var(--olive)}
+.hero-tune{display:inline-flex;align-items:center;gap:9px;margin:-6px 0 28px;padding:9px 16px;background:rgba(86,106,53,.1);border:1px solid rgba(86,106,53,.22);border-radius:999px;font-size:14.5px;font-weight:600;color:var(--olive);opacity:0;transform:translateY(22px);animation:rise .9s var(--ease) .33s forwards}
+.hero-tune svg{flex:none}
 
 /* hero anim on load */
 .hero .reveal-load{opacity:0;transform:translateY(22px);animation:rise .8s var(--ease) forwards}
@@ -376,9 +378,10 @@ footer h5{font-family:'Bitter';color:var(--paper);font-size:15px;margin-bottom:1
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <span class="eyebrow reveal-load">Для виноградников, садов и плодовых хозяйств</span>
+      <span class="eyebrow reveal-load">Для виноградников, плодовых и ягодных культур</span>
       <h1>Учёт работ ваших бригад — <span class="ac">честный</span> и в реальном времени</h1>
       <p class="lead">Бригадир отмечает работы с телефона прямо в поле. Вы видите, что и кем сделано, платите по факту и не теряете опытных мастеров. Без тетрадей, звонков и сведения отчётов по вечерам.</p>
+      <p class="hero-tune"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg> Настраивается под ваше хозяйство</p>
       <div class="hero-actions">
         <a href="#cta" class="btn btn-primary btn-lg">Получить бесплатный аудит</a>
         <a href="#calc" class="btn btn-ghost btn-lg">Посчитать выгоду</a>
@@ -422,10 +425,10 @@ footer h5{font-family:'Bitter';color:var(--paper);font-size:15px;margin-bottom:1
       <h2>Если хоть один пункт про вас — мы не зря встретились</h2>
     </div>
     <div class="prob-grid">
-      <div class="prob reveal" data-d="0"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 5h16v14H4zM8 9h8M8 13h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><p>Объёмы работ записаны в тетради бригадира — а к концу месяца цифры не сходятся.</p></div>
-      <div class="prob reveal" data-d="1"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M16 17l4-4-4-4M20 13H8M9 7V5H4v14h5v-2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>Опытные мастера уходят — и приходится возить бригады издалека, переплачивая за доставку.</p></div>
-      <div class="prob reveal" data-d="2"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 4h16v12H7l-3 3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span><p>Чтобы узнать, что сделано на участке, нужно звонить бригадиру и ждать.</p></div>
-      <div class="prob reveal" data-d="3"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M7 7h8a3 3 0 010 6H7m0 0h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><p>Зарплату считают вручную, а споры «кто сколько сделал» — обычное дело.</p></div>
+      <div class="prob reveal" data-d="0"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 5h16v14H4zM8 9h8M8 13h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><p>До сих пор заполняете бумажные наряды и каждый день возите их в контору? Это и часы бригадира, которые он мог бы потратить на реальную работу в бригаде, и бессмысленные траты бензина.</p></div>
+      <div class="prob reveal" data-d="1"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="3.5" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><rect x="8.5" y="8.5" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/></svg></span><p>Уверены, что не платите дважды за одну и ту же работу? На бумаге засчитать один ряд двум бригадам — проще простого, а поймать можно только через бухгалтера при закрытии клетки и потом долго искать задвоенный ряд.</p></div>
+      <div class="prob reveal" data-d="2"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 4h16v12H7l-3 3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span><p>Хотите понять, как идут дела на участках, — и снова звоните, ждёте? Реальную картину видите с опозданием.</p></div>
+      <div class="prob reveal" data-d="3"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 3a9 9 0 019 9h-9z" fill="currentColor"/></svg></span><p>Знаете прямо сейчас, сколько гектаров обработано и сколько осталось до конца агросрока?</p></div>
     </div>
     <p class="prob-after reveal">Всё это решает один простой инструмент. <b>Показываем ниже.</b></p>
   </div>
@@ -436,8 +439,8 @@ footer h5{font-family:'Bitter';color:var(--paper);font-size:15px;margin-bottom:1
   <div class="wrap">
     <div class="s-head reveal">
       <span class="eyebrow">Что это</span>
-      <h2>Учёт работ, сделанный для поля, а не для кабинета</h2>
-      <p class="lead">Простое приложение: бригадир отмечает выполненные работы с телефона, а вы видите полную картину по участкам и людям в реальном времени. Без обучения и нового железа — работает на обычном смартфоне.</p>
+      <h2>Точный учёт работ — оперативный отчёт</h2>
+      <p class="lead">Простое приложение: бригадир отмечает выполненные работы с телефона, а вы видите полную картину по участкам и людям в реальном времени. Без обучения и нового железа — работает на обычном телефоне.</p>
     </div>
     <div class="feat-grid">
       <div class="feat reveal" data-d="0">
@@ -451,9 +454,9 @@ footer h5{font-family:'Bitter';color:var(--paper);font-size:15px;margin-bottom:1
         <p>Видите «сделано / осталось» по каждому участку и каждой бригаде — сейчас, не в конце месяца.</p>
       </div>
       <div class="feat reveal" data-d="2">
-        <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
-        <h3>Оплата по факту</h3>
-        <p>Выработка считается сама. Припискам и спорам о зарплате приходит конец.</p>
+        <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 2.5v5.5c0 4.3-3 7.2-7 8.5-4-1.3-7-4.2-7-8.5V5.5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3>Без задвоений и пропусков</h3>
+        <p>Система контролирует ряды: не даёт записать один ряд дважды и подсвечивает спорные. Учёт точный — ничего не теряется и не задваивается.</p>
       </div>
     </div>
   </div>
@@ -469,20 +472,20 @@ footer h5{font-family:'Bitter';color:var(--paper);font-size:15px;margin-bottom:1
     <div class="bento">
       <div class="ben money reveal">
         <div class="corner"></div>
-        <div class="num">01 · ДЕНЬГИ</div>
-        <h3>Удерживаете своих — и перестаёте переплачивать за чужих</h3>
-        <div class="big">−30%</div>
-        <p>Текучка падает: местные мастера остаются, потому что видят честную оплату по факту. Не нужно возить бригады издалека, платить за доставку и кормить посредников. Фонд оплаты — под контролем.</p>
+        <div class="num">01 · ВРЕМЯ И СИЛЫ</div>
+        <h3>Время — на дело, а не на бумаги</h3>
+        <div class="big">минуты</div>
+        <p>Бригадир отмечает работы в телефоне за пару касаний — и снова в поле, а не везёт наряды в контору. Бухгалтер не ищет вручную задвоенные ряды. Отчёт собирается за минуты вместо вечеров. Ключевой человек занят бригадой и не выгорает на бумажной волоките — и остаётся с вами.</p>
       </div>
       <div class="ben quality reveal" data-d="1">
-        <div class="num">02 · КАЧЕСТВО</div>
-        <h3>Мастер бережёт лозу</h3>
-        <p>Правильная обрезка — это урожай на годы вперёд. Случайные руки с секатором обходятся дороже любой экономии. Удержали мастеров — сохранили качество и урожай.</p>
+        <div class="num">02 · КОНТРОЛЬ</div>
+        <h3>Контроль без звонков и ожиданий</h3>
+        <p>Сводка по участкам — в любой момент. Не нужно звонить и ждать: открыли — и видите, что сделано.</p>
       </div>
       <div class="ben control reveal" data-d="2">
-        <div class="num">03 · КОНТРОЛЬ</div>
-        <h3>Видите всё сейчас</h3>
-        <p>Ход работ — не в конце месяца, а в реальном времени. Раньше заметили отставание — раньше среагировали. Все данные у вас, а не в чьей-то тетради.</p>
+        <div class="num">03 · ВАШИ ДАННЫЕ</div>
+        <h3>Данные — ваши, а не в чужой тетради</h3>
+        <p>Вся история работ хранится в системе, а не в голове или тетради бригадира. Сменился человек, потерялась тетрадь — у вас всё равно полная картина по любому участку и периоду. Хозяйство не зависит от одного работника.</p>
       </div>
     </div>
     <div style="text-align:center;margin-top:38px" class="reveal">
