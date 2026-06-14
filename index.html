@@ -249,6 +249,8 @@ input[type=range]{width:100%;accent-color:var(--wine);height:6px}
 .scr-date{font-size:11.5px;color:var(--ink-soft);margin-bottom:10px}
 .scr-total{margin-top:10px;padding:11px 13px;background:rgba(47,125,82,.09);border:1px solid rgba(47,125,82,.22);border-radius:12px;font-size:12.5px;color:var(--ink);line-height:1.5}
 .scr-total b{color:var(--money)}
+.prod-demo{margin-top:30px;text-align:center}
+.prod-demo p{font-size:clamp(16px,1.4vw,18px);color:var(--ink);margin-bottom:16px;font-weight:600}
 
 /* vs giants */
 .vs{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:22px;overflow:hidden}
@@ -619,6 +621,10 @@ footer h5{font-family:'Bitter';color:var(--paper);font-size:15px;margin-bottom:1
         <p class="prod-cap">Готовый отчёт за период — отдельно руками, отдельно техникой, с итогами.</p>
       </div>
     </div>
+    <div class="prod-demo reveal">
+      <p>Хотите посмотреть продукт вживую — на учебных данных?</p>
+      <a href="#cta" class="btn btn-primary" data-intent="Демо">Запросить демо</a>
+    </div>
   </div>
 </section>
 
@@ -726,6 +732,14 @@ footer h5{font-family:'Bitter';color:var(--paper);font-size:15px;margin-bottom:1
     </div>
     <form id="leadForm" class="reveal" data-d="1">
       <div class="form-fields" id="formFields">
+        <div class="form-row">
+          <label>Что вас интересует</label>
+          <div class="channels">
+            <label><input type="radio" name="intent" value="Аудит" checked> Бесплатный аудит</label>
+            <label><input type="radio" name="intent" value="Демо"> Посмотреть демо</label>
+            <label><input type="radio" name="intent" value="Вопрос"> Вопрос</label>
+          </div>
+        </div>
         <div class="form-row">
           <label>Как вас зовут *</label>
           <input type="text" name="name" required placeholder="Имя">
@@ -851,7 +865,19 @@ function calc(){
 calc();
 
 /* ---- form ---- */
-document.getElementById('leadForm').addEventListener('submit',e=>{
+const leadForm=document.getElementById('leadForm');
+const submitBtn=leadForm.querySelector('.form-submit');
+function intentLabel(){
+  const v=(leadForm.querySelector('input[name="intent"]:checked')||{}).value;
+  submitBtn.textContent = v==='Демо' ? 'Запросить демо' : v==='Вопрос' ? 'Отправить вопрос' : 'Получить бесплатный аудит';
+}
+leadForm.querySelectorAll('input[name="intent"]').forEach(r=>r.addEventListener('change',intentLabel));
+intentLabel();
+document.querySelectorAll('[data-intent]').forEach(b=>b.addEventListener('click',()=>{
+  const r=leadForm.querySelector('input[name="intent"][value="'+b.dataset.intent+'"]');
+  if(r){r.checked=true;intentLabel();}
+}));
+leadForm.addEventListener('submit',e=>{
   e.preventDefault();
   document.getElementById('formFields').style.display='none';
   document.getElementById('formOk').classList.add('show');
