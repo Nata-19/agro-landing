@@ -799,6 +799,7 @@ footer h5{font-family:'Bitter';color:var(--paper);font-size:15px;margin-bottom:1
           <div class="channels">
             <label><input type="radio" name="ch" value="MAX" checked> MAX</label>
             <label><input type="radio" name="ch" value="Telegram"> Telegram</label>
+            <label><input type="radio" name="ch" value="ВК"> ВКонтакте</label>
             <label><input type="radio" name="ch" value="WhatsApp"> WhatsApp</label>
             <label><input type="radio" name="ch" value="Звонок"> Звонок</label>
           </div>
@@ -807,6 +808,7 @@ footer h5{font-family:'Bitter';color:var(--paper);font-size:15px;margin-bottom:1
           <label>Хозяйство / площадь <span style="color:var(--ink-soft);font-weight:400">(необязательно)</span></label>
           <input type="text" name="farm" placeholder="Напр.: виноградник, 150 га">
         </div>
+        <input type="text" name="hp" style="display:none" tabindex="-1" autocomplete="off">
         <button type="submit" class="btn btn-primary form-submit btn-lg">Получить бесплатный аудит</button>
         <p class="form-micro">Свяжусь в течение рабочего дня. Контакты не передаю третьим лицам.</p>
       </div>
@@ -918,10 +920,39 @@ document.querySelectorAll('[data-intent]').forEach(b=>b.addEventListener('click'
   const r=leadForm.querySelector('input[name="intent"][value="'+b.dataset.intent+'"]');
   if(r){r.checked=true;intentLabel();}
 }));
-leadForm.addEventListener('submit',e=>{
+leadForm.addEventListener('submit',async e=>{
   e.preventDefault();
-  document.getElementById('formFields').style.display='none';
-  document.getElementById('formOk').classList.add('show');
+  const fd=new FormData(leadForm);
+  const payload={
+    intent:fd.get('intent')||'',
+    name:fd.get('name')||'',
+    contact:fd.get('contact')||'',
+    channel:fd.get('ch')||'',
+    farm:fd.get('farm')||'',
+    hp:fd.get('hp')||''
+  };
+  submitBtn.disabled=true;
+  submitBtn.textContent='Отправляем…';
+  try{
+    const res=await fetch('https://demo.smart-assistantai.ru/api/lead',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(payload)
+    });
+    const data=await res.json().catch(()=>({}));
+    if(res.ok&&data.ok){
+      document.getElementById('formFields').style.display='none';
+      document.getElementById('formOk').classList.add('show');
+    }else{
+      submitBtn.disabled=false;
+      intentLabel();
+      alert('Не удалось отправить заявку. Попробуйте ещё раз или напишите напрямую.');
+    }
+  }catch(err){
+    submitBtn.disabled=false;
+    intentLabel();
+    alert('Ошибка соединения. Проверьте интернет и попробуйте ещё раз.');
+  }
 });
 </script>
 </body>
