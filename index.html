@@ -201,26 +201,26 @@ header.scrolled .nav{padding:11px 0}
 .how-note b{color:var(--ink)}
 
 /* calculator */
-.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:clamp(26px,3vw,42px);box-shadow:0 30px 60px -40px rgb(var(--shadow)/.5)}
-.field{margin-bottom:22px}
-.field label{display:block;font-weight:600;font-size:15px;margin-bottom:9px}
-.field input[type=number]{width:100%;padding:13px 15px;border:1.5px solid var(--line);border-radius:12px;font-family:'Manrope';font-size:16px;background:var(--paper);color:var(--ink);transition:border .2s}
-.field input:focus{outline:none;border-color:var(--wine)}
-.range-val{float:right;font-weight:700;color:var(--wine)}
-input[type=range]{width:100%;accent-color:var(--wine);height:6px}
-.toggle{display:flex;align-items:center;gap:12px;cursor:pointer;font-size:15px;font-weight:500}
-.toggle input{width:20px;height:20px;accent-color:var(--olive)}
-.calc-result{background:linear-gradient(165deg,var(--wine),var(--wine-deep));color:#fff;border-radius:18px;padding:30px;height:100%;display:flex;flex-direction:column;justify-content:center}
-.calc-result .rl{font-size:14px;opacity:.8}
-.calc-result .month{font-family:'Bitter';font-size:clamp(34px,5vw,52px);font-weight:800;color:var(--gold);line-height:1.05;margin:6px 0 2px}
-.calc-result .year{font-size:16px;opacity:.9;margin-top:14px}
-.calc-result .year b{color:#fff;font-weight:700}
-.calc-result .disc{font-size:12px;opacity:.7;margin:18px 0 22px;line-height:1.5}
-.calc-result .btn{width:100%;justify-content:center;background:var(--gold);color:var(--wine-deep)}
-.calc-result .btn:hover{background:#e8b755}
+.rcalc{max-width:640px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:clamp(28px,3vw,40px);box-shadow:0 30px 60px -40px rgb(var(--shadow)/.5)}
+.rcalc-field{margin-bottom:20px}
+.rcalc-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+.rcalc-label{font-weight:600;color:var(--ink);font-size:15px}
+.rcalc-value{font-family:'Bitter';font-weight:700;font-size:20px;color:var(--wine)}
+.rcalc-value .unit{color:var(--muted);font-weight:500;font-size:14px;margin-left:4px}
+.rcalc input[type=range]{width:100%;accent-color:var(--wine);height:6px;cursor:pointer}
+.rcalc-hint{color:var(--muted);font-size:12.5px;margin-top:5px}
+.rcalc-result{margin:30px 0 22px;padding:24px 22px;background:linear-gradient(135deg,#F0F5EF,#E6EFE5);border-left:4px solid var(--olive);border-radius:12px}
+.rcalc-pre{color:var(--muted);font-size:14px;margin-bottom:6px}
+.rcalc-amount{font-family:'Bitter';font-weight:800;font-size:clamp(30px,6vw,44px);color:var(--olive);line-height:1.1;margin-bottom:4px}
+.rcalc-amount .currency{font-weight:500;color:var(--olive);font-size:.7em;margin-left:6px}
+.rcalc-period{color:var(--ink);font-size:14px;font-weight:500}
+.rcalc-explain{color:var(--muted);font-size:13px;margin-top:12px;line-height:1.55}
+.rcalc-cta{display:block;width:100%;background:var(--wine);color:#fff;border:none;padding:16px 22px;border-radius:12px;font-family:'Manrope',sans-serif;font-weight:600;font-size:16px;cursor:pointer;text-align:center;text-decoration:none;transition:background .2s}
+.rcalc-cta:hover{background:var(--wine-deep)}
+.rcalc-footnote{color:var(--muted);font-size:11.5px;margin-top:12px;text-align:center;line-height:1.5}
 
 /* product mockups row */
-.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.prod-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
 .screen{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
 .screen .sh{padding:14px 16px;background:var(--paper-2);font-weight:600;font-size:14px;display:flex;align-items:center;gap:8px}
 .screen .sh .d{width:9px;height:9px;border-radius:50%;background:var(--terra)}
@@ -249,6 +249,15 @@ input[type=range]{width:100%;accent-color:var(--wine);height:6px}
 .scr-date{font-size:11.5px;color:var(--ink-soft);margin-bottom:10px}
 .scr-total{margin-top:10px;padding:11px 13px;background:rgba(47,125,82,.09);border:1px solid rgba(47,125,82,.22);border-radius:12px;font-size:12.5px;color:var(--ink);line-height:1.5}
 .scr-total b{color:var(--money)}
+.scr-filt{display:inline-block;font-size:11.5px;font-weight:600;color:var(--ink-soft);padding:5px 11px;border-radius:8px;border:1px solid var(--line);background:#fff;margin-bottom:10px}
+.scr-cult{font-size:13px;font-weight:700;color:var(--ink);margin:14px 0 8px;padding:8px 12px;background:rgba(60,110,71,.08);border-radius:10px}
+.scr-perf{padding:10px 0;border-bottom:1px dashed var(--line)}
+.scr-perf:last-child{border:none}
+.scr-perf .meta{font-size:12.5px;color:var(--ink);font-weight:600}
+.scr-perf .meta .qq{color:var(--ink-soft);font-weight:500;margin-left:4px}
+.scr-perf .done{font-size:12px;color:var(--ink-soft);margin-top:3px}
+.scr-perf .done b{color:var(--money)}
+.scr-perf .done .rest{color:var(--terra)}
 .prod-demo{margin-top:30px;text-align:center}
 .prod-demo p{font-size:clamp(16px,1.4vw,18px);color:var(--ink);margin-bottom:16px;font-weight:600}
 
@@ -548,39 +557,49 @@ footer h5{font-family:'Bitter';color:var(--paper);font-size:15px;margin-bottom:1
 <section class="s-pad bg-tint" id="calc">
   <div class="wrap">
     <div class="s-head reveal">
-      <span class="eyebrow">Калькулятор выгоды</span>
-      <h2>Посчитайте, сколько теряете на ручном учёте</h2>
-      <p class="lead">Подвигайте ползунки под своё хозяйство — увидите примерную экономию. Точный расчёт по вашим цифрам сделаем на бесплатном аудите.</p>
+      <span class="eyebrow">Калькулятор риска</span>
+      <h2>Посчитайте, сколько урожая под риском</h2>
+      <p class="lead">Без точного учёта виноградники теряют в среднем 5–10% урожая — на поздно обнаруженных недоделках и пропущенных агросроках. Прикиньте свой масштаб за 30 секунд.</p>
     </div>
-    <div class="calc-grid reveal">
-      <div class="calc-inputs">
-        <div class="field">
-          <label>Число бригад <span class="range-val" id="vBrig">3</span></label>
-          <input type="range" id="brig" min="1" max="20" value="3">
+    <div class="rcalc reveal">
+
+      <div class="rcalc-field">
+        <div class="rcalc-head">
+          <span class="rcalc-label">Площадь виноградника</span>
+          <span class="rcalc-value"><span id="rcArea">100</span><span class="unit">га</span></span>
         </div>
-        <div class="field">
-          <label>Всего рабочих <span class="range-val" id="vPpl">24</span></label>
-          <input type="range" id="ppl" min="3" max="200" value="24">
-        </div>
-        <div class="field">
-          <label>Средняя зарплата рабочего в месяц, ₽</label>
-          <input type="number" id="sal" value="50000" min="0" step="1000">
-        </div>
-        <div class="field">
-          <label class="toggle"><input type="checkbox" id="deliv" checked> Возите бригады издалека</label>
-        </div>
-        <div class="field" id="delivWrap">
-          <label>Расходы на доставку в месяц, ₽</label>
-          <input type="number" id="delivCost" value="60000" min="0" step="1000">
-        </div>
+        <input type="range" id="rcAreaIn" min="10" max="500" step="5" value="100">
       </div>
-      <div class="calc-result">
-        <div class="rl">Примерная экономия в месяц</div>
-        <div class="month" id="rMonth">0 ₽</div>
-        <div class="year">≈ <b id="rYear">0 ₽</b> в год</div>
-        <div class="disc">Оценка по средним допущениям (устранение приписок, высвобождение учёта, часть расходов на доставку). Точный расчёт — на аудите по вашим данным.</div>
-        <a href="#cta" class="btn">Получить точный расчёт на аудите</a>
+
+      <div class="rcalc-field">
+        <div class="rcalc-head">
+          <span class="rcalc-label">Урожайность</span>
+          <span class="rcalc-value"><span id="rcYield">10</span><span class="unit">т/га</span></span>
+        </div>
+        <input type="range" id="rcYieldIn" min="5" max="15" step="0.5" value="10">
+        <div class="rcalc-hint">По данным Кубани 2025 — в среднем 11 т/га</div>
       </div>
+
+      <div class="rcalc-field">
+        <div class="rcalc-head">
+          <span class="rcalc-label">Цена продажи</span>
+          <span class="rcalc-value"><span id="rcPrice">50</span><span class="unit">₽/кг</span></span>
+        </div>
+        <input type="range" id="rcPriceIn" min="30" max="250" step="5" value="50">
+        <div class="rcalc-hint">Технический сорт ~40–60 ₽/кг, столовый ~150–250 ₽/кг</div>
+      </div>
+
+      <div class="rcalc-result">
+        <div class="rcalc-pre">Для вашего масштаба под риском:</div>
+        <div class="rcalc-amount">до <span id="rcAmount">3 750 000</span><span class="currency">₽</span></div>
+        <div class="rcalc-period">в год — на поздно обнаруженных недоделках</div>
+        <div class="rcalc-explain">Наш Помощник Бригадира показывает в реальном времени где и сколько недоделано.</div>
+      </div>
+
+      <a href="#cta" class="rcalc-cta">Получить точный расчёт на бесплатном аудите</a>
+
+      <div class="rcalc-footnote">Расчёт оценочный — 7,5% от валовой выручки. Точная цифра зависит от вашего хозяйства и считается на аудите по реальным данным.</div>
+
     </div>
   </div>
 </section>
@@ -629,6 +648,23 @@ footer h5{font-family:'Bitter';color:var(--paper);font-size:15px;margin-bottom:1
           <div class="scr-total">Итого техникой: <b>10.28 га</b></div>
         </div>
         <p class="prod-cap">Готовый отчёт за период — отдельно руками, отдельно техникой, с итогами.</p>
+      </div>
+      <div class="screen reveal" data-d="3">
+        <div class="sh"><span class="d"></span>Выполнение</div>
+        <div class="sb">
+          <div class="scr-tabs"><span>Ввод</span><span>Отчёт</span><span>Журнал</span><span>Спорные</span><span>Сверка</span><span class="on">Выполнение</span></div>
+          <span class="scr-filt">🔍 Фильтры ▾</span>
+          <div class="scr-cult">🌱 Виноград</div>
+          <div class="scr-perf">
+            <div class="meta">Обрезка<span class="qq">· Кв.1 · ряды</span></div>
+            <div class="done">Сделано: <b>2.49 га</b> · Осталось: <span class="rest"><b>9.51 га</b></span></div>
+          </div>
+          <div class="scr-perf">
+            <div class="meta">Опрыскивание<span class="qq">· Кв.2 · механизировано</span></div>
+            <div class="done">Сделано: <b>5.00 га</b> · Осталось: <span class="rest"><b>7.00 га</b></span></div>
+          </div>
+        </div>
+        <p class="prod-cap">Сколько сделано и сколько осталось в гектарах — по культурам и видам работ. Видно прогресс к агросрокам.</p>
       </div>
     </div>
     <div class="prod-demo reveal">
@@ -847,32 +883,27 @@ document.querySelectorAll('.faq-q').forEach(q=>{
   });
 });
 
-/* ---- calculator ---- */
-const brig=document.getElementById('brig'),ppl=document.getElementById('ppl'),sal=document.getElementById('sal'),
-deliv=document.getElementById('deliv'),delivCost=document.getElementById('delivCost'),delivWrap=document.getElementById('delivWrap'),
-vBrig=document.getElementById('vBrig'),vPpl=document.getElementById('vPpl'),
-rMonth=document.getElementById('rMonth'),rYear=document.getElementById('rYear');
-const fmt=n=>Math.round(n).toLocaleString('ru-RU')+' ₽';
-let animId,shown=0;
-function animateTo(target){
-  cancelAnimationFrame(animId);const start=shown,t0=performance.now(),dur=600;
-  const tick=now=>{const p=Math.min(1,(now-t0)/dur),e=1-Math.pow(1-p,3);shown=start+(target-start)*e;
-    rMonth.textContent=fmt(shown);if(p<1)animId=requestAnimationFrame(tick);else shown=target;};
-  animId=requestAnimationFrame(tick);
+/* ---- calculator: риск упущенного урожая ---- */
+const rcArea=document.getElementById('rcAreaIn'),rcYield=document.getElementById('rcYieldIn'),rcPrice=document.getElementById('rcPriceIn'),
+rcAreaV=document.getElementById('rcArea'),rcYieldV=document.getElementById('rcYield'),rcPriceV=document.getElementById('rcPrice'),
+rcAmount=document.getElementById('rcAmount');
+const fmtRub=n=>Math.round(n).toLocaleString('ru-RU').replace(/,/g,' ');
+let rcAnimId,rcShown=3750000;
+function rcAnimateTo(target){
+  cancelAnimationFrame(rcAnimId);const start=rcShown,t0=performance.now(),dur=500;
+  const tick=now=>{const p=Math.min(1,(now-t0)/dur),e=1-Math.pow(1-p,3);rcShown=start+(target-start)*e;
+    rcAmount.textContent=fmtRub(rcShown);if(p<1)rcAnimId=requestAnimationFrame(tick);else rcShown=target;};
+  rcAnimId=requestAnimationFrame(tick);
 }
-function calc(){
-  vBrig.textContent=brig.value;vPpl.textContent=ppl.value;
-  delivWrap.style.display=deliv.checked?'block':'none';
-  const fot=(+ppl.value)*(+sal.value||0);
-  const pripiski=fot*0.05;                 // устранение приписок/неточностей
-  const uchet=Math.min(25000,(+ppl.value)*700); // высвобождение учёта, масштаб от размера
-  const dost=deliv.checked?(+delivCost.value||0)*0.5:0; // часть доставки за счёт удержания местных
-  const month=pripiski+uchet+dost;
-  animateTo(month);
-  rYear.textContent=fmt(month*12);
+function rcRecalc(){
+  const area=parseFloat(rcArea.value),yld=parseFloat(rcYield.value),price=parseFloat(rcPrice.value);
+  rcAreaV.textContent=area;rcYieldV.textContent=yld;rcPriceV.textContent=price;
+  const risk=area*yld*price*1000*0.075;
+  const rounded=Math.round(risk/10000)*10000;
+  rcAnimateTo(rounded);
 }
-[brig,ppl,sal,deliv,delivCost].forEach(el=>el.addEventListener('input',calc));
-calc();
+[rcArea,rcYield,rcPrice].forEach(el=>el.addEventListener('input',rcRecalc));
+rcRecalc();
 
 /* ---- form ---- */
 const leadForm=document.getElementById('leadForm');
